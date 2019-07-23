@@ -1,3 +1,6 @@
+![效果图](https://github.com/lanligang/forkingDogDemo/blob/master/forkingDogDemo.gif)
+
+
 # menu_oc
 左侧侧滑出页面的menu 盒子，仅仅用来试验。可以缩放，和平移两种模式
 使用方式：
