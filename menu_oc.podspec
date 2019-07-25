@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name     = 'menu_oc'
 
-  s.version  = '1.0.1'
+  s.version  = '1.0.2'
 
   s.license  = { :type => 'MIT' }
 
