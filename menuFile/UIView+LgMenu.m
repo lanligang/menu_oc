@@ -9,74 +9,74 @@
 
 @implementation UIView (LgMenu)
 
-- (void)setX:(CGFloat)x
+- (void)setLg_x:(CGFloat)lg_x
 {
    CGRect frame = self.frame;
-   frame.origin.x = x;
+   frame.origin.x = lg_x;
    self.frame = frame;
 }
 
-- (CGFloat)x
+- (CGFloat)lg_x
 {
    return self.frame.origin.x;
 }
 
-- (void)setY:(CGFloat)y
+- (void)setLg_y:(CGFloat)lg_y
 {
   CGRect frame = self.frame;
-  frame.origin.y = y;
+  frame.origin.y = lg_y;
   self.frame = frame;
 }
 
-- (CGFloat)y
+- (CGFloat)lg_y
 {
   return self.frame.origin.y;
 }
 
-- (void)setWidth:(CGFloat)width
+- (void)setLg_width:(CGFloat)lg_width
 {
    CGRect frame = self.frame;
-   frame.size.width = width;
+   frame.size.width = lg_width;
    self.frame = frame;
 }
 
-- (CGFloat)width
+- (CGFloat)lg_width
 {
    return self.frame.size.width;
 }
 
-- (void)setHeight:(CGFloat)height
+- (void)setLg_height:(CGFloat)lg_height
 {
   CGRect frame = self.frame;
-  frame.size.height = height;
+  frame.size.height = lg_height;
   self.frame = frame;
 }
 
-- (CGFloat)height
+- (CGFloat)lg_height
 {
     return self.frame.size.height;
 }
 
-- (void)setCenterX:(CGFloat)centerX
+- (void)setLg_centerX:(CGFloat)lg_centerX
 {
   CGPoint center = self.center;
-  center.x = centerX;
+  center.x = lg_centerX;
   self.center = center;
 }
 
-- (CGFloat)centerX
+- (CGFloat)lg_centerX
 {
    return self.center.x;
 }
 
-- (void)setCenterY:(CGFloat)centerY
+- (void)setLg_centerY:(CGFloat)lg_centerY
 {
   CGPoint center = self.center;
-  center.y = centerY;
+  center.y = lg_centerY;
   self.center = center;
 }
 
-- (CGFloat)centerY
+- (CGFloat)lg_centerY
 {
   return self.center.y;
 }

@@ -8,16 +8,11 @@
 #import <UIKit/UIKit.h>
 
 @interface UIView (LgMenu)
-@property (nonatomic, assign) CGFloat x;
-@property (nonatomic, assign) CGFloat y;
-@property (nonatomic, assign) CGFloat width;
-@property (nonatomic, assign) CGFloat height;
-@property (nonatomic, assign) CGFloat centerX;
-@property (nonatomic, assign) CGFloat centerY;
-
-
-
-
-
+@property (nonatomic, assign) CGFloat lg_x;
+@property (nonatomic, assign) CGFloat lg_y;
+@property (nonatomic, assign) CGFloat lg_width;
+@property (nonatomic, assign) CGFloat lg_height;
+@property (nonatomic, assign) CGFloat lg_centerX;
+@property (nonatomic, assign) CGFloat lg_centerY;
 
 @end

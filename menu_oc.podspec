@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 
   s.source   = { :git => 'https://github.com/lanligang/menu_oc.git', :tag => s.version }
 
-  s.source_files = 'menuFile/**/*'
+  s.source_files = 'menuFile/**/*.{h,m}'
   s.requires_arc = true
   s.ios.deployment_target = '7.0'
   s.ios.frameworks = ['UIKit', 'CoreGraphics', 'Foundation']

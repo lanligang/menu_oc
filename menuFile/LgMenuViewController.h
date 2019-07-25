@@ -17,6 +17,11 @@
  */
 @property (nonatomic,assign)CGFloat scaleValue;
 
+/**
+ * 左侧最大的宽度
+*/
+@property(nonatomic,assign)CGFloat maxLeft;
+
 
 -(instancetype)initWithLeftViewController:(UIViewController *)leftViewController andMainViewController:(UIViewController *)mainViewController;
 

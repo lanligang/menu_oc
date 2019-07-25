@@ -28,6 +28,7 @@
     self  =  [super init];
  if (self){
    _scaleValue = 0.3;
+	_maxLeft =  MAXOPEN_LEFT;
    [self addChildViewController:leftViewController];
    [self addChildViewController:mainViewController];
   self.leftViewController = leftViewController;
@@ -69,29 +70,29 @@
   CGFloat chageX = (aPoint.x-_lastPoint.x);
 
   UIView *mainView =self.rightViewController.view;
-  CGFloat currentX = mainView.x + chageX;
+  CGFloat currentX = mainView.lg_x + chageX;
   if(_isScale){
-	mainView.transform = CGAffineTransformMakeScale(1.0-currentX/MAXOPEN_LEFT*_scaleValue,1.0-currentX/MAXOPEN_LEFT*_scaleValue);
+	mainView.transform = CGAffineTransformMakeScale(1.0-currentX/_maxLeft*_scaleValue,1.0-currentX/_maxLeft*_scaleValue);
   }
   if(currentX <= 0){
    currentX = 0;
-  }else if (currentX >= MAXOPEN_LEFT){
-   currentX = MAXOPEN_LEFT;
+  }else if (currentX >= _maxLeft){
+   currentX = _maxLeft;
   }
 
   [mainView bringSubviewToFront:_effectView];
 
-  _effectView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:currentX /MAXOPEN_LEFT*0.5];
+  _effectView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:currentX /_maxLeft*0.5];
 	 
   if(_isScale){
-   mainView.transform = CGAffineTransformMakeScale(1.0-currentX/MAXOPEN_LEFT*_scaleValue,1.0-currentX /MAXOPEN_LEFT*_scaleValue);
+   mainView.transform = CGAffineTransformMakeScale(1.0-currentX/_maxLeft*_scaleValue,1.0-currentX /_maxLeft*_scaleValue);
   }
-    mainView.x = currentX;
+    mainView.lg_x = currentX;
 
   _lastPoint = aPoint;
  }else if (panges.state==UIGestureRecognizerStateEnded||panges.state==UIGestureRecognizerStateFailed ||panges.state==UIGestureRecognizerStateCancelled){
   UIView *mainView =self.rightViewController.view;
-  if(mainView.x>=MAXOPEN_LEFT*0.35){
+  if(mainView.lg_x>=_maxLeft*0.35){
    [self openLeftView];
   }else{
    [self closeLeftView];
@@ -102,14 +103,14 @@
 {
   UIView *mainView =self.rightViewController.view;
  [mainView bringSubviewToFront:_effectView];
- CGFloat currentX =MAXOPEN_LEFT;
- CGAffineTransform aTransform = CGAffineTransformMakeScale(1.0-currentX/MAXOPEN_LEFT*_scaleValue,1.0-currentX /MAXOPEN_LEFT*_scaleValue);
+ CGFloat currentX =_maxLeft;
+ CGAffineTransform aTransform = CGAffineTransformMakeScale(1.0-currentX/_maxLeft*_scaleValue,1.0-currentX /_maxLeft*_scaleValue);
 
 	[UIView animateWithDuration:0.3 animations:^{
 		if(self->_isScale){
 			mainView.transform = aTransform;
 		}
-		mainView.x = MAXOPEN_LEFT;
+		mainView.lg_x = self->_maxLeft;
 		self->_effectView.backgroundColor =[[UIColor blackColor]colorWithAlphaComponent:0.5];
 	} completion:^(BOOL finished) {
 		[self.leftViewController viewWillAppear:YES];
@@ -126,7 +127,7 @@
 		if(self->_isScale){
 			mainView.transform = CGAffineTransformMakeScale(1.0,1.0);
 		}
-		mainView.x = 0;
+		mainView.lg_x = 0;
 		self->_effectView.backgroundColor =[[UIColor blackColor]colorWithAlphaComponent:0];
 	} completion:^(BOOL finished) {
 		[self.leftViewController viewDidDisappear:YES];
